@@ -16,7 +16,7 @@ RUN bundle install
 COPY . .
 
 # Expose port
-EXPOSE 3000
+EXPOSE 3001
 
 # Start Rails server
 CMD ["rails", "server", "-b", "0.0.0.0"]
