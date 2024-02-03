@@ -3,7 +3,9 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
 
-  def self.authenticate(email, password)
-    find_by(email: email)&.authenticate(password)
+  class << self
+    def authenticate(email, password)
+      find_by(email: email)&.authenticate(password)
+    end
   end
 end
