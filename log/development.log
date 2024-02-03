@@ -1,0 +1,13 @@
+  [1m[35m (161.4ms)[0m  [1m[35mCREATE DATABASE "user_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (66.6ms)[0m  [1m[35mCREATE DATABASE "user_api_test" ENCODING = 'unicode'[0m
+Started GET "/admin" for ::1 at 2024-02-03 16:32:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+Started GET "/" for ::1 at 2024-02-03 16:32:43 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aacar/.rvm/gems/ruby-3.2.2/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aacar/.rvm/gems/ruby-3.2.2/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 262)
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 2658)
+
+
