@@ -93,6 +93,7 @@ GEM
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     json (2.7.1)
+    jwt (2.7.1)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -236,6 +237,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  jwt
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.8)

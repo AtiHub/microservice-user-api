@@ -39,6 +39,7 @@ gem "bootsnap", require: false
 gem 'dotenv-rails'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw]
