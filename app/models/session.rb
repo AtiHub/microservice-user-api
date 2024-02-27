@@ -1,9 +1,9 @@
 class Session < ApplicationRecord
   belongs_to :user
 
-  validates :refresh_token_jti, presence: true
+  validates :refresh_token_jti, :refresh_token_exp, presence: true
 
-  before_create :set_refresh_token_fields
+  before_validation :set_refresh_token_fields, on: :create
 
   def refresh!
     set_refresh_token_fields
