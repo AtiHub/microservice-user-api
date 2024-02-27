@@ -8,4 +8,8 @@ class User < ApplicationRecord
       find_by(email: email)&.authenticate(password)
     end
   end
+
+  def full_name
+    [first_name, last_name].join(' ')
+  end
 end
