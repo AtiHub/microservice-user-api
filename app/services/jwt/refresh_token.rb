@@ -15,7 +15,7 @@ module Jwt
 
     def payload
       {
-        exp: session.refresh_token_exp,
+        exp: session.refresh_token_exp.to_i,
         iat: Time.current.to_i,
         jti: session.refresh_token_jti,
         iss: 'microservice_user_api',
