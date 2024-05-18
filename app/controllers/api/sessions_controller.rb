@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   def token
     result = case params[:grant_type]
     when 'password'
@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
       UserSession::Create.new(user).execute
     when 'refresh_token'
       @token = params[:refresh_token]
-      raise Exceptions::ExpiredSignature if refresh_token_exp < Time.current.to_i
 
       session = Session.find_by!(refresh_token_jti: refresh_token_jti)
       UserSession::Refresh.new(session).execute
@@ -31,9 +30,5 @@ class SessionsController < ApplicationController
 
   def refresh_token_jti
     @refresh_token_jti ||= decode_refresh_token[0]['jti']
-  end
-
-  def refresh_token_exp
-    @refresh_token_exp ||= decode_refresh_token[0]['exp']
   end
 end
