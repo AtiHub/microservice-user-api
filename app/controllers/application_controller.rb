@@ -13,7 +13,7 @@ class ApplicationController < ActionController::API
   end
 
   rescue_from ActiveRecord::RecordNotFound do |error|
-    render(json: { errors: [{ message: "#{error.model} not found!" }] }, status: 422)
+    render(json: { errors: [{ message: "#{error.model} not found!" }] }, status: 404)
   end
 
   def render_error(exception, status = 422)
